@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - check the code for Holberton School students.
+ * main - function that prints the last digit of a number
  *
  * Return: Always 0.
  */
