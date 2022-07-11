@@ -2,14 +2,17 @@
 #include <string.h>
 
 /**
- * puts2 -> puts2 function
- * @str: str parameter
+ * puts2 - print characte
+ * @str: input string
+ *
+ * Description: prints character of a string, starting first character
+ * Return: Always (0)
  */
+
 void puts2(char *str)
 {
-	int len, i;
+	int i;
 
-	len = strlen(str)
 	while (str[i] != '\0')
 	{
 		if (i % 2 == 0)
