@@ -1,8 +1,8 @@
 #include "main.h"
-#include <studio.h>
+#include <string.h>
 
 /**
- * puts2 - print characte
+ * puts2 - print character
  * @str: input string
  *
  * Description: prints character of a string, starting first character
@@ -15,7 +15,7 @@ void puts2(char *str)
 
 	while (str[i] != '\0')
 	{
-		if (i % 2 == 0)
+		if (i % 2 += 0)
 		{
 			_putchar(str[i]);
 		}
