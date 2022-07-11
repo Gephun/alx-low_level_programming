@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <studio.h>
 
 /**
  * puts2 - print characte
