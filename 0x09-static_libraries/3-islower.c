@@ -1,18 +1,19 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _islower - check the code for Holberton School students.
- *
- * @c:  is a parameter
- *
- * Return: Always 0.
+ * _islower - checks if input is lowercase
+ * @c: variable to determine if input is lowercase
+ * main - uses built in function
+ * Return: 0 if succesful
  */
 
 int _islower(int c)
 {
-	if (c >= 97 && c <= 122)
-	{
-		return (1);
-	}
-	return (0);
+int i;
+i = 0;
+if (c >= 'a' && c <= 'z')
+{
+i = 1;
+}
+return (i);
 }

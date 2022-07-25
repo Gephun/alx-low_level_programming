@@ -1,29 +1,51 @@
-#include "holberton.h"
+#include "main.h"
+#include <limits.h>
+
 /**
- * _atoi - int
- * @s: pointer
- * Return: int.
+ * _atoi - Convert a string to an integer
+ * @s: Pointer to the string to convert
+ *
+ * Return: The integer that was converted
  */
 int _atoi(char *s)
 {
-	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
+	int i, start, negative;
+	unsigned int number;
 
+	start = -1;
+	negative = 0;
+	number = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '-')
-			sig = sig * -1;
 		if (s[i] >= '0' && s[i] <= '9')
+			start = i;
+
+		if (s[i] == '-' && start == -1)
 		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
+			if (negative)
+				negative = 0;
+			else
+				negative = 1;
 		}
-		else if (brk == 1)
-			break;
 	}
-	res = sig * res;
-	return (res);
+
+	if (start != -1)
+	{
+		for (i = 0; s[i] != '\0'; i++)
+		{
+			if (s[i] >= '0' && s[i] <= '9')
+				number = number * 10 + s[i] - '0';
+			else if (s[i - 1] >= '0' && s[i - 1] <= '9')
+				break;
+		}
+	}
+
+	if ((number >= (unsigned int) INT_MAX && negative == 0))
+		return (INT_MAX);
+	else if ((number > (unsigned int) INT_MAX && negative))
+		return (INT_MIN);
+	else if (negative)
+		return ((int) -number);
+	else
+		return ((int) number);
 }
