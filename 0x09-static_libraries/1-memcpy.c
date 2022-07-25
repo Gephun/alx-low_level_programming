@@ -1,19 +1,23 @@
 #include "main.h"
 
 /**
- * _memcpy - memset function
- * @dest: start point of string to change
- * @src: value that will replace
- * @n: number of bytes to change
- * Return: changed pointer
+ *_memcpy - copies bytes from memory area src to memory area dest
+ *@dest: destination area memory
+ *@src: source memory area
+ *@n: data
+ *
+ *Return: dest
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	char *dest1 = dest;
-	char *src1 = src;
+unsigned int i;
+i = 0;
 
-	for (; n != 0; dest1++, n--, src1++)
-		*dest1 = *src1;
-	return (dest);
+while (i < n)
+{
+dest[i] = src[i];
+i++;
+}
+return (dest);
 }

@@ -1,26 +1,33 @@
 #include "main.h"
 
 /**
- * _strncat - concatenates two strings only taking n bytes from src
- * @dest: first string to be added to
- * @src: second string to be added
- * @n: number of bites to use from src
- * Return: concatenated string
+ *_strncat - concatenate strings
+ *@dest: destination
+ *@src: source
+ *@n: integer
+ *
+ *Return: destination
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	char *temp = dest;
+int j = 0;
+int i = 0;
 
-	for (; *temp != '\0'; temp++)
-		;
-	for (; *src != '\0'; src++)
-	{
-		if (n == 0)
-			break;
-		*temp = *src;
-		temp++;
-		n--;
-	}
-	return (dest);
+while (dest[i] != '\0')
+{
+i++;
+}
+
+for (j = 0; src[j] != '\0'; j++)
+{
+if (j < n)
+{
+dest[j + i] = src[j];
+}
+else
+
+dest[j + i] = '\0';
+}
+return (dest);
 }
